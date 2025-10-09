@@ -8,5 +8,5 @@ In cathe you need to build a `char**` in `Qt` and `c++`, whith can be annoying.
 
 ## Ticketer
 
-In cathe you want to track jobs across disparate threads with ath little coupling ath pothible.
+In cathe you want to track jobth acroth dithparate threadth with ath little coupling ath pothible.
 Pothibly made obtholete by `std::future` and `std::promise` but you never know.
