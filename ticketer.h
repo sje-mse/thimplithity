@@ -10,7 +10,7 @@
  * in which requests to a separate service can be tracked in a decoupled and thread-safe manner.
  *
  * In the most basic use-case, suppose a main thread and a service thread.
- * Let's make a service class to contain a work queue and facilitate 
+ * Let's make a service class to contain a work queue and facilitate
  *
  * class ServiceClass {
  * public:
@@ -204,8 +204,10 @@ public:
 
 		Entry &entry = found->second;
 		if (entry.status != PENDING) {
-			_tickets.erase(found);
+			TicketStatus status = entry.status;
 			result = entry.data;
+			_tickets.erase(found);
+			return status;
 		}
         return entry.status;
 	}
